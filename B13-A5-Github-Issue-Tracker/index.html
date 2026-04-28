@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <body class="bg-gray-50 flex  items-center justify-center h-screen font-[Geist]">
+        <div class="bg-white p-8 rounded-lg  shadow-md w-96 text-center border ">
+
+            <img src="assets/github-logo.png" alt="Logo" class="w-16 mx-auto mb-4">
+            <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
+            <p class="text-gray-500  text-sm mb-6">Sign in to manage your issues</p>
+
+            <div class="text-left mb-4">
+                <label class="blck  text-sm font-medium">Username</label>
+                <input type="text" id="username" placeholder=" Enter Username"
+                    class="w-full border p-2  rounded mt-1 outline-none focus:ring-2  focus:ring-blue-500">
+                <p class="text-xs text-[#4A00FF] mt-1">Default: admin</p>
+            </div>
+
+            <div class="text-left mb-6">
+                <label class="block text-sm  font-medium">Password</label>
+                <input type="password" id="password" placeholder="Enter Password"
+                    class="w-full border p-2  rounded mt-1 outline-none focus:ring-2  focus:ring-blue-500">
+                <p class="text-xs text-[#4A00FF]  mt-1">Default: admin123</p>
+            </div>
+
+            <button onclick="handleLogin()"
+                class="w-full bg-[#4A00FF] text-white py-2  rounded font-semibold  hover:bg-blue-700 transition">Sign
+                In</button>
+            <div class="relative flex  items-center justify-center my-8">
+                <div class="flex-grow  border-t border-[#E2E8F0]"></div>
+                <span class="flex-shrink mx-4  text-[#1F2937] text-xs font-medium ">OR</span>
+                <div class="flex-grow border-t  border-[#E2E8F0] "></div>
+            </div>
+            <div class="text-center">
+                <p class="text-[#64748B]  text-xs font-medium mb-4">Demo Credentials:</p>
+                <div class="mt-6 p-3  bg-gray-100 rounded text-xs text-gray-600">
+                    <!-- <p>Demo Credentials:</p> -->
+                    <p class="text-[#1F2137]"><strong> Username:</strong> admin</p>
+                    <p class="text-[#1F2137]"><strong> Password: </strong> admin123</p>
+                </div>
+            </div>
+
+
+            <script>
+                function handleLogin() {
+                    const user = document.getElementById('username').value;
+                    const pass = document.getElementById('password').value;
+
+                    if (user === 'admin' && pass === 'admin123') {
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        alert('Invalid Credentials Try again.');
+                    }
+                }
+            </script>
+    </body>
+</body>
+
+</html>
